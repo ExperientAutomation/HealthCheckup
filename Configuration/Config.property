@@ -1,0 +1,20 @@
+ChromeDriver=N://QA//R&DQA//Selenium//Drivers//chromedriver.exe
+
+excelpath=N://QA//LiveWorkSpace//Data//ALLAPPS.xlsx
+excelpathRDONLY=N://QA//LiveWorkSpace//Data//RDONLY.xlsx
+
+screenshotpath=N://QA//LiveWorkSpace//Data//ScreenShots//
+
+qawebreg=https://qawebreg.experientevent.com/Show
+qashowman=https://qashowman.experientevent.com
+qanewproduction=https://qashowman.experientevent.com
+qawebstaff=https://qawebreg.experientevent.com/Show
+qassw= https://qashowman.experientevent.com/ShowSetupWizard610/Default.aspx
+qaReporting=https://qareportingdashboard.experientevent.com/ReportMenu.aspx
+
+prodwebreg=https://registration.experientevent.com/Show
+prodshowman=https://showmanager.experientevent.com
+prodnewproduction=https://showmanager.experientevent.com
+prodwebstaff=https://registration.experientevent.com/Show
+prodDP=https://decisionpoint.experientevent.com/v6_2/
+prodReporting=https://reportingdashboard.experientevent.com/ReportMenu.aspx
