@@ -334,6 +334,7 @@ public class EventXL_Apps extends BrowserFactory {
 		int dp = driver.findElements(By.xpath("//a[@class='link-logout']")).size();		
 		validation.testErrorOnPage(driver, icol, irow, subenv, mainenv, showcode, dp);
 //		System.out.println("DP Application opened");
+		driver.close();
 	}	
 
 	

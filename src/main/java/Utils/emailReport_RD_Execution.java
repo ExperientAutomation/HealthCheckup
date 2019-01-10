@@ -16,7 +16,8 @@ public class emailReport_RD_Execution extends EventXL_Apps {
 
 	public void sendEmail(String testName, String sheetName) {
 
-		final String username = config.LoginCredentails("USER_NAME");
+//		final String username = config.LoginCredentails("USER_NAME");
+		final String username = "Chandrasekhar.Kulandasamy@experient-inc.com";
 		String Screenshotpath = "N:/QA/LiveWorkSpace/Data/ScreenShots/";
 
 		Properties props = new Properties();
@@ -63,7 +64,7 @@ public class emailReport_RD_Execution extends EventXL_Apps {
 				for (i = 3; i <= xls.getRowCount(sheetName); i++) {
 					
 					result = xls.getCellData(sheetName, j, i);					
-					if (result.equalsIgnoreCase("Fail")) {						
+					if ((result.equalsIgnoreCase("")) || (result.equalsIgnoreCase("Fail"))) {						
 						count++;
 					}
 				}
@@ -77,11 +78,13 @@ public class emailReport_RD_Execution extends EventXL_Apps {
 			} else if (count == 1) {
 
 				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com,sreejak@infinite.com,julie.racster@experient-inc.com"));
+//				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com"));
 				System.out.println("One fail");
 				html = "<p>Hi,</p><p> One RD Application got failed!. </p> <p> Please check the failed applications in the attachment and please open the below folder to view the failed applications Screenshot. </p><p>"+Screenshotpath+"</p><p>Thanks,</p><p>Chandra</p>";
 			} else {
 				
 				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com,sreejak@infinite.com,julie.racster@experient-inc.com"));
+//				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com"));
 				System.out.println("There are "+count+" failures");
 				html = "<p>Hi,</p><p> There are "+count+" failures in the RD Application. </p> <p> Please check the failed applications in the attachment and please open the below folder to view the failed applications Screenshot. </p><p>"+Screenshotpath+"</p><p>Thanks,</p><p>Chandra</p>";
 			}			

@@ -60,7 +60,7 @@
 
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>./ALLApps.xml</suiteXmlFile>
+						<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 

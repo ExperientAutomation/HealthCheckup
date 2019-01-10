@@ -18,8 +18,8 @@ public class emailReport {
 	@Test
 	public void sendEmail(String testName, String sheetName) {
 
-		// final String username = "Chandrasekhar.Kulandasamy@experient-inc.com";
-		final String username = config.LoginCredentails("USER_NAME");
+		 final String username = "Chandrasekhar.Kulandasamy@experient-inc.com";
+//		final String username = config.LoginCredentails("USER_NAME");
 
 		Properties props = new Properties();
 		props.put("mail.smtp.auth", false);
