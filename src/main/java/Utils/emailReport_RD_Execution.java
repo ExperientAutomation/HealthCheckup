@@ -11,14 +11,16 @@ import javax.mail.internet.MimeMultipart;
 import LanuchApplication.EventXL_Apps;
 
 public class emailReport_RD_Execution extends EventXL_Apps {
-	
+
 	String html;
+	
+	ZipFile zip = new ZipFile();
 
 	public void sendEmail(String testName, String sheetName) {
 
-//		final String username = config.LoginCredentails("USER_NAME");
-		final String username = "Chandrasekhar.Kulandasamy@experient-inc.com";
-		String Screenshotpath = "N:/QA/LiveWorkSpace/Data/ScreenShots/";
+//		 final String username = "Chandrasekhar.Kulandasamy@experient-inc.com";
+		final String username = config.LoginCredentails("USER_EMAILID");
+
 
 		Properties props = new Properties();
 		props.put("mail.smtp.auth", false);
@@ -44,7 +46,7 @@ public class emailReport_RD_Execution extends EventXL_Apps {
 			BodyPart messageBodyPart = new MimeBodyPart();
 			BodyPart attachmentPart = new MimeBodyPart();
 
-			Multipart multipart = new MimeMultipart();
+			Multipart multipart = new MimeMultipart();			
 
 			messageBodyPart = new MimeBodyPart();
 			String file = config.getexcelpathRDONLY();
@@ -70,28 +72,47 @@ public class emailReport_RD_Execution extends EventXL_Apps {
 				}
 			}
 
+			BodyPart attachmentPart2 = new MimeBodyPart();
+						
 			if (count == 0) {
 				
-				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com, sreejak@infinite.com"));
+				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekark@infics.com"));
 				System.out.println("All pass");
 				html = "<p>Hi,</p><p>PFA the Automation Test report for RD Applications.</p><p>Note: All are Passed :-)</p><p>Thanks,</p><p>Chandra</p>";	
 			} else if (count == 1) {
-
-				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com,sreejak@infinite.com,julie.racster@experient-inc.com"));
-//				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com"));
+				
+				zip.ZipFileScreenshot();
+				
+				String screenshotfile = config.getscreenshotpath()+".zip";	
+				String scrshotfileName = System.currentTimeMillis()+".zip";
+				DataSource scrsource = new FileDataSource(screenshotfile);
+				attachmentPart2.setDataHandler(new DataHandler(scrsource));
+				attachmentPart2.setFileName(scrshotfileName);
+				
+				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com"));
 				System.out.println("One fail");
-				html = "<p>Hi,</p><p> One RD Application got failed!. </p> <p> Please check the failed applications in the attachment and please open the below folder to view the failed applications Screenshot. </p><p>"+Screenshotpath+"</p><p>Thanks,</p><p>Chandra</p>";
+				html = "<p>Hi,</p><p> One RD Application got failed!. </p> <p> Please check both failed application status and screenshot in the attachment. </p><p>Thanks,</p><p>Chandra</p>";
+			
 			} else {
 				
-				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com,sreejak@infinite.com,julie.racster@experient-inc.com"));
-//				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com"));
+				zip.ZipFileScreenshot();			
+				
+				String screenshotfile = config.getscreenshotpath()+".zip";	
+				String scrshotfileName = System.currentTimeMillis()+".zip";
+				DataSource scrsource = new FileDataSource(screenshotfile);
+				attachmentPart2.setDataHandler(new DataHandler(scrsource));
+				attachmentPart2.setFileName(scrshotfileName);
+				
+				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com"));
 				System.out.println("There are "+count+" failures");
-				html = "<p>Hi,</p><p> There are "+count+" failures in the RD Application. </p> <p> Please check the failed applications in the attachment and please open the below folder to view the failed applications Screenshot. </p><p>"+Screenshotpath+"</p><p>Thanks,</p><p>Chandra</p>";
+				html = "<p>Hi,</p><p> There are "+count+" failures in the RD Application. </p> <p> Please check both failed applications status and screenshots in the attachment. </p><p>Thanks,</p><p>Chandra</p>";
 			}			
 
 			messageBodyPart.setContent(html, "text/html");
+			
 			multipart.addBodyPart(messageBodyPart);
 			multipart.addBodyPart(attachmentPart);
+			if (count!=0) multipart.addBodyPart(attachmentPart2);
 			message.setContent(multipart);
 			Transport.send(message);
 			System.out.println("Email Sent");

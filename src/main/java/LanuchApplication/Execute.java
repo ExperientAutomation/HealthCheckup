@@ -16,6 +16,8 @@ public class Execute extends EventXL_Apps {
 		
 		xls = new XlsUtil(config.getexcelpath());
 		
+		System.out.println("Started clearing Excel sheet value.");
+		
 		try {
 			int j =0, i =0;
 			String result = null;
