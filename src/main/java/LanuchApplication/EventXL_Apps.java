@@ -134,9 +134,9 @@ public class EventXL_Apps extends BrowserFactory {
 				driver.findElement(By.xpath("//input[@value='Go!']")).click();
 				// Go to Production Request tab
 				driver.findElement(By.xpath("//*[contains(text(),'Production')]")).click();
-				Thread.sleep(3000);
+				Thread.sleep(5000);
 				driver.findElement(By.xpath("//*[contains(text(),'Production')]")).click();
-				Thread.sleep(3000);
+				Thread.sleep(5000);
 				driver.switchTo().frame(0);
 				int newprod = driver.findElements(By.xpath("//button[contains(.,'Add New Production Request')]")).size();
 //			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(.,'Add New Production Request')]")));
