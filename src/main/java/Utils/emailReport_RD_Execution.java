@@ -18,9 +18,7 @@ public class emailReport_RD_Execution extends EventXL_Apps {
 
 	public void sendEmail(String testName, String sheetName) {
 
-//		 final String username = "Chandrasekhar.Kulandasamy@experient-inc.com";
 		final String username = config.LoginCredentails("USER_EMAILID");
-
 
 		Properties props = new Properties();
 		props.put("mail.smtp.auth", false);
@@ -76,7 +74,7 @@ public class emailReport_RD_Execution extends EventXL_Apps {
 						
 			if (count == 0) {
 				
-				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekark@infics.com"));
+				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekark@infics.com,sreejak@infinite.com,Sirasanambati.Anudeep@infinite.com"));
 				System.out.println("All pass");
 				html = "<p>Hi,</p><p>PFA the Automation Test report for RD Applications.</p><p>Note: All are Passed :-)</p><p>Thanks,</p><p>Chandra</p>";	
 			} else if (count == 1) {
@@ -89,7 +87,7 @@ public class emailReport_RD_Execution extends EventXL_Apps {
 				attachmentPart2.setDataHandler(new DataHandler(scrsource));
 				attachmentPart2.setFileName(scrshotfileName);
 				
-				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com"));
+				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com,,Sirasanambati.Anudeep@infinite.com,sreejak@infinite.com,julie.racster@experient-inc.com"));
 				System.out.println("One fail");
 				html = "<p>Hi,</p><p> One RD Application got failed!. </p> <p> Please check both failed application status and screenshot in the attachment. </p><p>Thanks,</p><p>Chandra</p>";
 			
@@ -103,7 +101,7 @@ public class emailReport_RD_Execution extends EventXL_Apps {
 				attachmentPart2.setDataHandler(new DataHandler(scrsource));
 				attachmentPart2.setFileName(scrshotfileName);
 				
-				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com"));
+				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com,,Sirasanambati.Anudeep@infinite.com,sreejak@infinite.com,julie.racster@experient-inc.com"));
 				System.out.println("There are "+count+" failures");
 				html = "<p>Hi,</p><p> There are "+count+" failures in the RD Application. </p> <p> Please check both failed applications status and screenshots in the attachment. </p><p>Thanks,</p><p>Chandra</p>";
 			}			

@@ -75,7 +75,7 @@ public class emailReport {
 			
 			if (count == 0) {
 				
-				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekark@infics.com"));
+				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekark@infics.com,sreejak@infinite.com,Sirasanambati.Anudeep@infinite.com"));
 				System.out.println("All pass");
 				html = "<p>Hi,</p><p>PFA the Automation Test report.</p><p>Note: All are Passed :-)</p><p>Thanks,</p><p>Chandra</p>";	
 			} else if (count == 1) {
@@ -88,7 +88,7 @@ public class emailReport {
 				attachmentPart2.setDataHandler(new DataHandler(scrsource));
 				attachmentPart2.setFileName(scrshotfileName);
 				
-				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com"));
+				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com,sreejak@infinite.com,Sirasanambati.Anudeep@infinite.com"));
 				System.out.println("One fail");
 				html = "<p>Hi,</p><p> One Application got failed!. </p> <p> Please check both failed application status and screenshot in the attachment. </p><p>Thanks,</p><p>Chandra</p>";
 			
@@ -102,7 +102,7 @@ public class emailReport {
 				attachmentPart2.setDataHandler(new DataHandler(scrsource));
 				attachmentPart2.setFileName(scrshotfileName);
 				
-				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com"));
+				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com,sreejak@infinite.com,Sirasanambati.Anudeep@infinite.com"));
 				System.out.println("There are "+count+" failures");
 				html = "<p>Hi,</p><p> There are "+count+" failures in the Application. </p> <p> Please check both failed applications status and screenshots in the attachment. </p><p>Thanks,</p><p>Chandra</p>";
 			}			
