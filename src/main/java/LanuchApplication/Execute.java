@@ -1,5 +1,7 @@
 package LanuchApplication;
 
+import java.io.File;
+
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -36,20 +38,20 @@ public class Execute extends EventXL_Apps {
 		
 		System.out.println("Excel sheet value cleared");	
 		
-/*//		Delete Screenshot files		
-		File dir = new File("N://QA//LiveWorkSpace//Data//ScreenShots//");
+//		Delete Screenshot files		
+		File dir = new File(config.getscreenshotpath());
 		File[] listFiles = dir.listFiles();
 		for(File file : listFiles){
 			System.out.println("Deleting "+file.getName());
 			file.delete(); 
-		}*/
+		}
 		
 	}
 		catch (Exception e) {		
 		e.printStackTrace();
 	}		
 	
-//	System.out.println("Deleted Screenshot files");
+	System.out.println("Deleted Screenshot files");
 
 	}
 	

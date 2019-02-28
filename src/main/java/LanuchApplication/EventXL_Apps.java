@@ -85,7 +85,7 @@ public class EventXL_Apps extends BrowserFactory {
 						
 			if (driver.findElements(By.xpath("//input[contains(@id,'Username') or contains(@id,'UserName')]")).size() > 0) {
 					
-				smlogin.smloginChandra(driver);
+				smlogin.externallogin(driver);
 				driver.manage().timeouts().implicitlyWait(180, TimeUnit.SECONDS);
 				driver.findElement(By.xpath("//input[@class='inputShowCode']")).sendKeys(showcode);
 				driver.findElement(By.xpath("//input[@value='Go!']")).click();
@@ -126,7 +126,7 @@ public class EventXL_Apps extends BrowserFactory {
 			driver.manage().timeouts().implicitlyWait(180, TimeUnit.SECONDS);
 			System.out.println("New URL:"+newurl.toString());
 			if (driver.findElements(By.xpath("//input[contains(@id,'Username') or contains(@id,'UserName')]")).size() > 0)
-				smlogin.smloginChandra(driver);	
+				smlogin.externallogin(driver);
 			
 		    if (driver.findElements(By.xpath("//input[@class='inputShowCode']")).size()>0) {
 				
@@ -226,7 +226,7 @@ public class EventXL_Apps extends BrowserFactory {
 			driver.get(newurl1.toString());		
 			System.out.println(newurl1);
 			if (driver.findElements(By.xpath("//input[contains(@id,'Username') or contains(@id,'UserName')]")).size() > 0)
-				smlogin.smloginChandra(driver);	
+				smlogin.externallogin(driver);	
 			
 			if (driver.findElements(By.xpath("//input[@id='qcGroupNumber']")).size()>0) {
 				
@@ -280,7 +280,7 @@ public class EventXL_Apps extends BrowserFactory {
 			driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
 			System.out.println("New URL:"+newurl.toString());
 			if (driver.findElements(By.xpath("//input[contains(@id,'Username') or contains(@id,'UserName')]")).size() > 0)
-				smlogin.smloginChandra(driver);	
+				smlogin.externallogin(driver);	
 			
 			Thread.sleep(3000);
 			driver.switchTo().frame("menu");
@@ -329,7 +329,7 @@ public class EventXL_Apps extends BrowserFactory {
 		driver.get(newurl.toString());
 		System.out.println("New Url: "+newurl.toString());
 		if (driver.findElements(By.xpath("//input[contains(@id,'Username') or contains(@id,'UserName')]")).size() > 0)
-			smlogin.smloginChandra(driver);			
+			smlogin.externallogin(driver);		
 		
 		int dp = driver.findElements(By.xpath("//a[@class='link-logout']")).size();		
 		validation.testErrorOnPage(driver, icol, irow, subenv, mainenv, showcode, dp);

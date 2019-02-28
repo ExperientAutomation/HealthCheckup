@@ -16,11 +16,12 @@ public class ErrorCheck extends BrowserFactory {
 	StringBuffer allerrors = new StringBuffer();
 
 	// This method validates various errors on the page
-	public void testErrorOnPage(WebDriver ldriver, int lcol, int lrow,String subenv, String mainenv, String showcode, int size)
+	public void testErrorOnPage(WebDriver ldriver, int lcol,
+			int lrow,String subenv, String mainenv, String showcode, int size)
 			
 		throws Exception {
 		String des;
-		String screenshotpath = "N://QA//LiveWorkSpace//Data//ScreenShots//";
+		String screenshotpath = config.getscreenshotpath();
 
 
 		int column = lcol;

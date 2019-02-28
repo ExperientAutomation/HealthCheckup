@@ -40,7 +40,7 @@ public class Execute_RD_Only extends EventXL_Apps {
 			
 //			Delete Screenshot files
 			
-			File dir = new File("N://QA//LiveWorkSpace//Data//ScreenShots//");
+			File dir = new File(config.getscreenshotpath());
 			File[] listFiles = dir.listFiles();
 			for(File file : listFiles){
 				System.out.println("Deleting "+file.getName());

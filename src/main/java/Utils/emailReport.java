@@ -75,7 +75,7 @@ public class emailReport {
 			
 			if (count == 0) {
 				
-				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekark@infics.com,sreejak@infinite.com,Sirasanambati.Anudeep@infinite.com"));
+				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com,sreejak@infinite.com,Sirasanambati.Anudeep@infinite.com"));
 				System.out.println("All pass");
 				html = "<p>Hi,</p><p>PFA the Automation Test report.</p><p>Note: All are Passed :-)</p><p>Thanks,</p><p>Chandra</p>";	
 			} else if (count == 1) {

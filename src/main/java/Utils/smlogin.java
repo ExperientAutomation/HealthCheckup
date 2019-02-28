@@ -21,6 +21,12 @@ public class smlogin {
 		Thread.sleep(1000);
 
 	}
+		
+	public static void externallogin(WebDriver driver) {
+		
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		driver.findElement(By.xpath("//a[@class='button large expanded']")).click();
+	}
 	
 	
 }
