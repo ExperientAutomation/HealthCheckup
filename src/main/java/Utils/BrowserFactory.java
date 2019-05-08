@@ -47,7 +47,7 @@ public class BrowserFactory {
 			case "Chrome":
 				driver = drivers.get("Chrome");
 //				if (driver == null) {
-					System.setProperty("webdriver.chrome.driver", config.getChromePath());
+					System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") +"//Drivers//chromedriver.exe");
 					driver = new ChromeDriver();
 					driver.manage().window().maximize();
 					drivers.put("Chrome", driver);
@@ -57,7 +57,7 @@ public class BrowserFactory {
 			case "ChromeOptions":
 				driver = drivers.get("ChromeOptions");
 				if (driver == null) {
-					System.setProperty("webdriver.chrome.driver", config.getChromePath());
+					System.setProperty("webdriver.chrome.driver",  System.getProperty("user.dir") +"//Drivers//chromedriver.exe");
 					ChromeOptions cOptions = new ChromeOptions();
 					cOptions.addExtensions(new File("MultiPass-for-HTTP-basic-authentication_v0.7.4.crx"));
 					driver = new ChromeDriver(cOptions);
