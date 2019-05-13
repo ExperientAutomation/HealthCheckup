@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="209570" started-at="2019-05-13T10:40:35Z" finished-at="2019-05-13T10:44:05Z">
+  <suite name="Default suite" duration-ms="1251085" started-at="2019-05-13T11:31:48Z" finished-at="2019-05-13T11:52:39Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="209570" started-at="2019-05-13T10:40:35Z" finished-at="2019-05-13T10:44:05Z">
+    <test name="Default test" duration-ms="1251085" started-at="2019-05-13T11:31:48Z" finished-at="2019-05-13T11:52:39Z">
       <class name="LanuchApplication.Execute">
-        <test-method status="PASS" signature="clearExcelSheet()[pri:0, instance:LanuchApplication.Execute@4883b407]" name="clearExcelSheet" is-config="true" duration-ms="35796" started-at="2019-05-13T10:40:35Z" finished-at="2019-05-13T10:41:11Z">
+        <test-method status="PASS" signature="clearExcelSheet()[pri:0, instance:LanuchApplication.Execute@4883b407]" name="clearExcelSheet" is-config="true" duration-ms="56170" started-at="2019-05-13T11:31:48Z" finished-at="2019-05-13T11:32:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clearExcelSheet -->
-        <test-method status="PASS" signature="ProdExecution()[pri:1, instance:LanuchApplication.Execute@4883b407]" name="ProdExecution" duration-ms="173362" started-at="2019-05-13T10:41:11Z" finished-at="2019-05-13T10:44:05Z">
+        <test-method status="PASS" signature="StageExecution()[pri:0, instance:LanuchApplication.Execute@4883b407]" name="StageExecution" duration-ms="570551" started-at="2019-05-13T11:32:44Z" finished-at="2019-05-13T11:42:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- StageExecution -->
+        <test-method status="PASS" signature="ProdExecution()[pri:1, instance:LanuchApplication.Execute@4883b407]" name="ProdExecution" duration-ms="623343" started-at="2019-05-13T11:42:15Z" finished-at="2019-05-13T11:52:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ProdExecution -->
-        <test-method status="PASS" signature="sendEmailReport()[pri:0, instance:LanuchApplication.Execute@4883b407]" name="sendEmailReport" is-config="true" duration-ms="293" started-at="2019-05-13T10:44:05Z" finished-at="2019-05-13T10:44:05Z">
+        <test-method status="PASS" signature="sendEmailReport()[pri:0, instance:LanuchApplication.Execute@4883b407]" name="sendEmailReport" is-config="true" duration-ms="924" started-at="2019-05-13T11:52:38Z" finished-at="2019-05-13T11:52:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- sendEmailReport -->
