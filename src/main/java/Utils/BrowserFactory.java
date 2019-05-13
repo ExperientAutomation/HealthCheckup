@@ -3,6 +3,7 @@ package Utils;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,7 +18,7 @@ public class BrowserFactory {
 	protected static ConfigReader config = new ConfigReader();
 
 	private static Map<String, WebDriver> drivers = new HashMap<String, WebDriver>();
-	protected static WebDriver driver = null;
+	public static WebDriver driver = null;
 	public static XlsUtil xls;
 	
 	public static WebDriver getBrowser(String browserName) {			
@@ -50,6 +51,8 @@ public class BrowserFactory {
 					System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") +"//Drivers//chromedriver.exe");
 					driver = new ChromeDriver();
 					driver.manage().window().maximize();
+					driver.manage().timeouts().implicitlyWait(60,TimeUnit.SECONDS);
+					driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 					drivers.put("Chrome", driver);
 //				}
 				break;

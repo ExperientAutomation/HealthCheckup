@@ -87,7 +87,7 @@ public class emailReport_RD_Execution extends EventXL_Apps {
 				attachmentPart2.setDataHandler(new DataHandler(scrsource));
 				attachmentPart2.setFileName(scrshotfileName);
 				
-				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com,Sirasanambati.Anudeep@infinite.com,sreejak@infinite.com,julie.racster@experient-inc.com"));
+				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com,Sirasanambati.Anudeep@infinite.com,sreejak@infinite.com"));
 				System.out.println("One fail");
 				html = "<p>Hi,</p><p> One RD Application got failed!. </p> <p> Please check both failed application status and screenshot in the attachment. </p><p>Thanks,</p><p>Chandra</p>";
 			
@@ -101,7 +101,7 @@ public class emailReport_RD_Execution extends EventXL_Apps {
 				attachmentPart2.setDataHandler(new DataHandler(scrsource));
 				attachmentPart2.setFileName(scrshotfileName);
 				
-				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com,Sirasanambati.Anudeep@infinite.com,sreejak@infinite.com,julie.racster@experient-inc.com"));
+				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com,Sirasanambati.Anudeep@infinite.com,sreejak@infinite.com"));
 				System.out.println("There are "+count+" failures");
 				html = "<p>Hi,</p><p> There are "+count+" failures in the RD Application. </p> <p> Please check both failed applications status and screenshots in the attachment. </p><p>Thanks,</p><p>Chandra</p>";
 			}			

@@ -7,6 +7,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
 import Utils.BrowserFactory;
 import Utils.ErrorCheck;
 import Utils.smlogin;
@@ -75,7 +77,9 @@ public class EventXL_Apps extends BrowserFactory {
 			int Showcoderownumber = irow;
 			if (subenv.equalsIgnoreCase("Prod")) { // Checking whether Prod or Stage
 			weburl = config.getProdshowman();
-			showcodecolumn = icol-2 ;}
+			showcodecolumn = icol-2 ;
+			}
+			
 			String showcode = xls.getCellData(sheetname,showcodecolumn,Showcoderownumber);
 						
 			StringBuffer newurl = new StringBuffer(weburl);
@@ -85,10 +89,11 @@ public class EventXL_Apps extends BrowserFactory {
 						
 			if (driver.findElements(By.xpath("//input[contains(@id,'Username') or contains(@id,'UserName')]")).size() > 0) {
 					
-				smlogin.externallogin(driver);
-				driver.manage().timeouts().implicitlyWait(180, TimeUnit.SECONDS);
+				smlogin.externallogin(driver);					
+				if (driver.findElements(By.xpath("//input[@class='inputShowCode']")).size()>0) {
 				driver.findElement(By.xpath("//input[@class='inputShowCode']")).sendKeys(showcode);
 				driver.findElement(By.xpath("//input[@value='Go!']")).click();
+				} 
 				int showmanshowlevel = driver.findElements(By.xpath("//td[contains(.,'Show Admin')]")).size();
 				validation.testErrorOnPage(driver, icol, irow, subenv, mainenv, showcode, showmanshowlevel);
 //				System.out.println("QA Show Manager Opened");
@@ -101,7 +106,6 @@ public class EventXL_Apps extends BrowserFactory {
 		} catch (Exception e) {			
 			e.printStackTrace();
 		}
-
 	}
 	
 	// New Production View Page validation
@@ -122,8 +126,7 @@ public class EventXL_Apps extends BrowserFactory {
 			
 			StringBuffer newurl = new StringBuffer(newprodnurl);
 			newurl.insert(8,mainenv);
-			driver.get(newurl.toString());
-			driver.manage().timeouts().implicitlyWait(180, TimeUnit.SECONDS);
+			driver.get(newurl.toString());		
 			System.out.println("New URL:"+newurl.toString());
 			if (driver.findElements(By.xpath("//input[contains(@id,'Username') or contains(@id,'UserName')]")).size() > 0)
 				smlogin.externallogin(driver);
@@ -299,13 +302,11 @@ public class EventXL_Apps extends BrowserFactory {
 //			System.out.println("QA Reporting Site Opened");
 			validation.testErrorOnPage(driver, icol, irow, subenv, mainenv, showcode, report);			
 			
-			} else {
-				
+			} else {				
 				validation.testErrorOnPage(driver, icol, irow, subenv, mainenv, showcode, 0);
 			}
 			
-		} catch (Exception e) {
-		
+		} catch (Exception e) {		
 			e.printStackTrace();
 		}
 		

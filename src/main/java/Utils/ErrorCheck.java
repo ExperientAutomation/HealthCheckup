@@ -23,9 +23,7 @@ public class ErrorCheck extends BrowserFactory {
 		String des;
 		String screenshotpath = config.getscreenshotpath();
 
-
-		int column = lcol;
-		
+		int column = lcol;		
 		int AppNamecol = 0;
 		int AppNamerow = lrow;
 		String AppName = xls.getCellData(sheetname, AppNamecol, AppNamerow);

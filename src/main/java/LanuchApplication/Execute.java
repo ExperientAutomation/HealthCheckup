@@ -80,11 +80,11 @@ public class Execute extends EventXL_Apps {
 			if (mainenv.equalsIgnoreCase("Live"))
 				mainenv = "";
 
-			stageapps.WebReg(subenv, mainenv, qaevncol, resutlrow + 1);			
-			stageapps.ShowManlive(subenv, mainenv, qaevncol, resutlrow + 2);
-			stageapps.NewProductionlive(subenv, mainenv, qaevncol, resutlrow + 3);
-			stageapps.SSW(subenv, mainenv, qaevncol, resutlrow + 4);
-			stageapps.WEbStaff(subenv, mainenv, qaevncol, resutlrow + 5);
+//			stageapps.WebReg(subenv, mainenv, qaevncol, resutlrow + 1);			
+//			stageapps.ShowManlive(subenv, mainenv, qaevncol, resutlrow + 2);
+//			stageapps.NewProductionlive(subenv, mainenv, qaevncol, resutlrow + 3);
+//			stageapps.SSW(subenv, mainenv, qaevncol, resutlrow + 4);
+//			stageapps.WEbStaff(subenv, mainenv, qaevncol, resutlrow + 5);
 			stageapps.Reporting(subenv, mainenv, qaevncol, resutlrow + 6);
 		}
 	}
