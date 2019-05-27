@@ -42,7 +42,7 @@ public class EventXL_Apps extends BrowserFactory {
 			newurl.insert(8, mainenv).append(showcode);
 			driver.get(newurl.toString());
 			System.out.println("New URL:"+newurl);
-			driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 			
 			Thread.sleep(2000);
 			if (driver.findElements(By.xpath("//div[@class='row fixedwidth']")).size()>0) {
@@ -70,7 +70,7 @@ public class EventXL_Apps extends BrowserFactory {
 
 		try {
 			driver = BrowserFactory.getBrowser("Chrome");
-			wait = new WebDriverWait(driver, 60);
+			wait = new WebDriverWait(driver, 100);
 			String weburl = config.getqashowman();
 			
 			showcodecolumn = icol-1;	
@@ -114,7 +114,7 @@ public class EventXL_Apps extends BrowserFactory {
 		try {
 			
 			driver = BrowserFactory.getBrowser("Chrome");
-			wait = new WebDriverWait(driver, 100);
+			wait = new WebDriverWait(driver, 120);
 			String newprodnurl = config.getqanewproduction();
 			
 			showcodecolumn = icol-1;
@@ -166,7 +166,7 @@ public class EventXL_Apps extends BrowserFactory {
 		try {
 //			showcodecolumn = 6;		
 			driver = BrowserFactory.getBrowser("Chrome");
-			wait = new WebDriverWait(driver, 60);
+			wait = new WebDriverWait(driver, 120);
 			String qassw =config.getqassw();
 			
 			showcodecolumn = icol-1;
@@ -267,7 +267,7 @@ public class EventXL_Apps extends BrowserFactory {
 		try {
 			driver = BrowserFactory.getBrowser("Chrome");
 			
-			wait = new WebDriverWait(driver, 60);
+			wait = new WebDriverWait(driver, 100);
 			String qareport = config.getqareporting();
 			
 			showcodecolumn = icol-1;
