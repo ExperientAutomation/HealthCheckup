@@ -74,7 +74,7 @@ public class emailReport_RD_Execution extends EventXL_Apps {
 						
 			if (count == 0) {
 				
-				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com,sreejak@infinite.com,Sirasanambati.Anudeep@infinite.com"));
+				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com,sreejak@infinite.com"));
 				System.out.println("All pass");
 				html = "<p>Hi,</p><p>PFA the Automation Test report for RD Applications.</p><p>Note: All are Passed :-)</p><p>Thanks,</p><p>Chandra</p>";	
 			} else if (count == 1) {
@@ -87,7 +87,7 @@ public class emailReport_RD_Execution extends EventXL_Apps {
 				attachmentPart2.setDataHandler(new DataHandler(scrsource));
 				attachmentPart2.setFileName(scrshotfileName);
 				
-				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com,Sirasanambati.Anudeep@infinite.com,sreejak@infinite.com"));
+				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com,sreejak@infinite.com"));
 				System.out.println("One fail");
 				html = "<p>Hi,</p><p> One RD Application got failed!. </p> <p> Please check both failed application status and screenshot in the attachment. </p><p>Thanks,</p><p>Chandra</p>";
 			
